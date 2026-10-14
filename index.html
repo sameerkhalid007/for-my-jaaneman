@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#19070d">
+  <meta name="description" content="A little apology, made with love, just for you.">
+  <title>I'm Sorry, My Jaaneman ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #19070d;
+      --card: #2a0c15;
+      --red: #ff4965;
+      --rose: #ff9eaa;
+      --cream: #fff0e9;
+      --muted: #e8c4ca;
+      --gold: #d9ae75;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .hero {
+      min-height: 100svh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 22px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 20%, #702033 0%, transparent 48%),
+        radial-gradient(ellipse at 10% 90%, #54101e 0%, transparent 45%),
+        linear-gradient(155deg, #10050a, #2a0b16 55%, #10050a);
+    }
+
+    .hero::before {
+      content: "🌹";
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.10;
+      right: -38px;
+      bottom: 30px;
+      transform: rotate(-25deg);
+      z-index: -1;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+    }
+
+    .heart {
+      color: var(--red);
+      display: inline-block;
+      animation: heartbeat 1.8s ease-in-out infinite;
+    }
+
+    h1, h2, .script {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(56px, 15vw, 84px);
+      line-height: 1.05;
+      color: var(--red);
+      text-shadow: 0 0 30px #ff496533;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--cream);
+      font-size: 0.65em;
+      margin-top: 12px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 310px;
+      margin: 26px auto;
+    }
+
+    .primary-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6178, #d91f43);
+      color: white;
+      border: 1px solid #ff9eaa88;
+      border-radius: 999px;
+      padding: 13px 27px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 8px 28px #ff345333;
+      transition: transform 0.25s ease;
+    }
+
+    .primary-btn:active {
+      transform: scale(0.96);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 24px;
+      color: #dbaeb6;
+      font-size: 11px;
+      letter-spacing: 1px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .section {
+      padding: 60px 22px;
+      max-width: 600px;
+      margin: auto;
+      scroll-margin-top: 20px;
+    }
+
+    .section-title {
+      color: var(--rose);
+      font-size: 38px;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .memory-card, .letter, .promise {
+      background: linear-gradient(145deg, #35111d, #210a12);
+      border: 1px solid #a947583d;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .memory-card {
+      text-align: center;
+    }
+
+    .placeholder-photo {
+      min-height: 150px;
+      border: 1px dashed #b65a6b;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--rose);
+      background: #18070d;
+      margin-bottom: 16px;
+      font-size: 13px;
+      padding: 16px;
+    }
+
+    .memory-card p, .letter p, .promise p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .letter {
+      background: #f6e4d2;
+      color: #54212a;
+      box-shadow: 0 12px 35px #0003;
+    }
+
+    .letter h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #8e1833;
+    }
+
+    .letter p {
+      color: #54212a;
+      margin-bottom: 12px;
+    }
+
+    .shayari {
+      font-family: 'Dancing Script', cursive;
+      font-size: 25px;
+      line-height: 1.6;
+      color: #ffe2df;
+      text-align: center;
+      padding: 12px 4px;
+    }
+
+    .promise {
+      text-align: center;
+    }
+
+    .promise .symbol {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .forgive {
+      text-align: center;
+      padding-bottom: 80px;
+    }
+
+    .forgive h2 {
+      font-size: 42px;
+      color: var(--rose);
+      margin-bottom: 12px;
+    }
+
+    .forgive p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .choice-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .choice-row button {
+      width: 100%;
+      max-width: 280px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .yes-btn {
+      border: none;
+      color: white;
+      background: var(--red);
+    }
+
+    .time-btn {
+      border: 1px solid #b16c7a;
+      color: var(--cream);
+      background: transparent;
+    }
+
+    #response {
+      margin-top: 22px;
+      color: var(--rose);
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      background: #10050a;
+      border-top: 1px solid #a947583d;
+      padding: 30px 18px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer strong {
+      display: block;
+      font-family: 'Dancing Script', cursive;
+      color: var(--cream);
+      font-size: 30px;
+      margin-top: 5px;
+    }
+
+    .petal {
+      position: fixed;
+      z-index: 10;
+      top: -30px;
+      pointer-events: none;
+      animation: fall linear forwards;
+      opacity: 0.8;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.16); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes fall {
+      to {
+        transform: translate(var(--drift), 110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero" id="home">
+    <p class="eyebrow">A little something from Sameer</p>
+
+    <div class="heart" style="font-size: 32px;">♥</div>
+
+    <h1>
+      I'm Sorry
+      <span>My Jaaneman ♡</span>
+    </h1>
+
+    <p class="intro">
+      Some feelings are too precious to leave unsaid.
+      I made this little world just for you, from the bottom of my heart. 🥺
+    </p>
+
+    <a class="primary-btn" href="#story">Open My Heart ♥</a>
+
+    <p class="scroll-hint">Scroll through our little story ↓</p>
+  </header>
+
+  <main>
+    <section class="section reveal" id="story">
+      <h2 class="section-title">Our Little World 📸</h2>
+      <p class="section-subtitle">
+        My favourite memories have one thing in common — you.
+      </p>
+
+      <article class="memory-card">
+        <div class="placeholder-photo">📷 Our favourite photo together</div>
+        <p>Every memory with you is a little piece of happiness. ❤️</p>
+      </article>
+
+      <article class="memory-card">
+        <div class="placeholder-photo">🌹 A beautiful memory of us</div>
+        <p>Of all the beautiful things in my life, you are my favourite.</p>
+      </article>
+    </section>
+
+    <section class="section reveal" id="apology">
+      <h2 class="section-title">Dil Se Maafi ❤️‍🩹</h2>
+      <p class="section-subtitle">A letter I wish I could say while holding your hand.</p>
+
+      <article class="letter">
+        <h3>My Dearest Jaaneman,</h3>
+
+        <p>
+          I'm truly sorry that I couldn't give you the time and attention you
+          deserved. I understand that my actions may have hurt you, and I
+          don't want your feelings to go unheard.
+        </p>
+
+        <p>
+          I was hurting too, but I never want my hurt to make you feel that
+          your feelings don't matter. Both of us deserve to be heard,
+          understood and treated with love.
+        </p>
+
+        <p>
+          You mean so much to me. I want to become better at communicating,
+          understanding you and making time for us.
+        </p>
+
+        <p>
+          I love you, Jaaneman. I'm sorry, and whenever you're ready,
+          I'd love for us to talk. ❤️
+        </p>
+
+        <p style="text-align: right; font-weight: 600;">
+          Forever with love,<br>Sameer ❤️
+        </p>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section-title">Kuch Dil Ki Baatein 🌹</h2>
+
+      <div class="shayari">
+        Galtiyan meri ho sakti hain,<br>
+        par mohabbat kabhi kam nahi hogi.<br>
+        Tum meri duaon ka woh hissa ho,<br>
+        jahan se meri khushi shuru hoti hai. ❤️
+      </div>
+
+      <div class="shayari">
+        Narazgi ko baaton se mita denge,<br>
+        khamoshiyon ko mohabbat se saja denge.<br>
+        Bas jab dil kare, laut aana Jaaneman,<br>
+        hum tumhari baat sukoon se sun lenge. 🥺
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section-title">My Promises to You 🤍</h2>
+      <p class="section-subtitle">Not just words — things I want to work on.</p>
+
+      <article class="promise">
+        <div class="symbol">💌</div>
+        <p>I will make a genuine effort to give us more quality time.</p>
+      </article>
+
+      <article class="promise">
+        <div class="symbol">🫂</div>
+        <p>I will listen to your feelings and try to understand before reacting.</p>
+      </article>
+
+      <article class="promise">
+        <div class="symbol">❤️</div>
+        <p>I will work on communicating honestly, even during difficult moments.</p>
+      </article>
+    </section>
+
+    <section class="section forgive reveal" id="forgive">
+      <h2>Will You Forgive Me?</h2>
+      <p>
+        I love you, but I respect your feelings and your time.
+        There's no pressure to answer before you're ready. ❤️
+      </p>
+
+      <div class="choice-row">
+        <button class="yes-btn" id="yesBtn">
+          I'm Ready to Talk ❤️
+        </button>
+
+        <button class="time-btn" id="timeBtn">
+          I Need More Time 🥺
+        </button>
+      </div>
+
+      <p id="response" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with all my heart, just for you</p>
+    <strong>Created out of love from</strong>
+    <strong>Sameer Khalid ♥</strong>
+  </footer>
+
+  <script>
+    // Reveal sections gently while scrolling.
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((section) => {
+      revealObserver.observe(section);
+    });
+
+    // A few soft rose petals; avoid overwhelming the phone.
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (!reducedMotion) {
+      function createPetal() {
+        const petal = document.createElement('span');
+        petal.className = 'petal';
+        petal.textContent = Math.random() > 0.5 ? '🌹' : '♥';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.fontSize = (12 + Math.random() * 10) + 'px';
+        petal.style.setProperty('--drift', (Math.random() * 100 - 50) + 'px');
+        petal.style.animationDuration = (7 + Math.random() * 5) + 's';
+
+        document.body.appendChild(petal);
+        setTimeout(() => petal.remove(), 12500);
+      }
+
+      setInterval(createPetal, 1800);
+    }
+
+    // Respect either response without applying pressure.
+    document.getElementById('yesBtn').addEventListener('click', () => {
+      document.getElementById('response').textContent =
+        'Thank you for being willing to talk, my Jaaneman. ❤️ Let’s take it gently, together.';
+    });
+
+    document.getElementById('timeBtn').addEventListener('click', () => {
+      document.getElementById('response').textContent =
+        'Of course, my love. Take all the time you need. I respect your space. ❤️‍🩹';
+    });
+  </script>
+</body>
+</html>
