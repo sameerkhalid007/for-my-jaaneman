@@ -176,8 +176,29 @@
     }
 
     .memory-card {
-      text-align: center;
-    }
+  text-align: center;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid #a9475866;
+  box-shadow: 0 8px 24px #0003;
+}
+
+.memory-photo {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid #d9ae7566;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 380px) {
+  .memory-photo {
+    height: 260px;
+  }
+}
 
     .placeholder-photo {
       min-height: 150px;
@@ -379,14 +400,54 @@
       </p>
 
       <article class="memory-card">
-        <div class="placeholder-photo">📷 Our favourite photo together</div>
+        <img
+          class="memory-photo"
+          src="images/couple-formal.jpg"
+          alt="Our special memory together"
+          loading="lazy"
+        >
         <p>Every memory with you is a little piece of happiness. ❤️</p>
       </article>
 
       <article class="memory-card">
-        <div class="placeholder-photo">🌹 A beautiful memory of us</div>
+        <img
+          class="memory-photo"
+          src="images/couple-selfie.jpg"
+          alt="A happy moment together"
+          loading="lazy"
+        >
         <p>Of all the beautiful things in my life, you are my favourite.</p>
       </article>
+
+      <article class="memory-card">
+  <img
+    class="memory-photo"
+    src="images/our-memory.jpg"
+    alt="A beautiful memory of us"
+    loading="lazy"
+  >
+  <p>Walking through life is more beautiful with you. ❤️</p>
+</article>
+
+<article class="memory-card">
+  <img
+    class="memory-photo"
+    src="images/her-smile.jpg"
+    alt="Your beautiful smile"
+    loading="lazy"
+  >
+  <p>Your smile makes even an ordinary day special. 🌹</p>
+</article>
+
+<article class="memory-card">
+  <img
+    class="memory-photo"
+    src="images/sunset-memory.jpg"
+    alt="A peaceful moment by the sea"
+    loading="lazy"
+  >
+  <p>Every sunset reminds me how beautiful life feels with you. ❤️</p>
+</article>
     </section>
 
     <section class="section reveal" id="apology">
