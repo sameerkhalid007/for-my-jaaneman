@@ -183,22 +183,26 @@
   box-shadow: 0 8px 24px #0003;
 }
 
+
 .memory-photo {
   display: block;
   width: 100%;
-  height: 320px;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  max-height: 65vh;
+  object-fit: contain;
+  object-position: center center;
+  background: #10050a;
   border-radius: 12px;
   border: 1px solid #d9ae7566;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
 }
 
 @media (max-width: 380px) {
   .memory-photo {
-    height: 260px;
+    max-height: 60vh;
   }
 }
+
 
     .placeholder-photo {
       min-height: 150px;
@@ -593,10 +597,36 @@
         'Thank you for being willing to talk, my Jaaneman. ❤️ Let’s take it gently, together.';
     });
 
-    document.getElementById('timeBtn').addEventListener('click', () => {
-      document.getElementById('response').textContent =
-        'Of course, my love. Take all the time you need. I respect your space. ❤️‍🩹';
-    });
+    
+const timeBtn = document.getElementById('timeBtn');
+
+function dodgeButton() {
+  const maxX = Math.max(0, (window.innerWidth - timeBtn.offsetWidth) / 2 - 20);
+  const maxY = 100;
+
+  const x = (Math.random() * 2 - 1) * Math.min(100, maxX);
+  const y = (Math.random() * 2 - 1) * maxY;
+
+  timeBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+timeBtn.addEventListener('pointerenter', dodgeButton);
+
+timeBtn.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  dodgeButton();
+}, { passive: false });
+
+// If the button is reached using a keyboard, move it away too.
+timeBtn.addEventListener('focus', dodgeButton);
+
+// It should never perform an action if a click is triggered.
+timeBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  dodgeButton();
+});
+
   </script>
 </body>
 </html>
